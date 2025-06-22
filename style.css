@@ -7,12 +7,13 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
+    width: 794px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-left: 6px solid #007acc;
+    box-sizing: border-box;
 }
 
 header {
@@ -116,23 +117,38 @@ ul {
 }
 
 
+.print-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.print-button:hover {
+    background-color: #005f99;
+}
+
 @media print {
-    @page {
+    /* @page {
         size: A4;
-        margin: 1cm;
-    }
+        margin: 0;
+    } */
 
     body {
         margin: 0;
         -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .container {
         box-shadow: none;
-        border-left: 0;
-    }
-
-    .no-print {
-        display: none !important;
+        /* padding: 1.5rem 2rem; */
+        border-left: 6px solid #007acc;
     }
 }
